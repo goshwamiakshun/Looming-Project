@@ -1,0 +1,63 @@
+/* Header.css */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    margin: 0;
+  }
+  
+  .header {
+    position: fixed;  /* Make the header stick at the top */
+    top: 0;
+    left: 0;
+    width: 100%;  /* Cover full width */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;  /* Vertically align items */
+    height: 60px;  /* Decreased height */
+    padding: 0 20px;  /* Adjusted padding for horizontal spacing */
+    background: linear-gradient(45deg, #3E5151, #DECBA4);  /* Gradient background */
+    color: white;
+    z-index: 1000;  /* Ensure header is on top of other content */
+  }
+  
+  .logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    font-weight: bold;
+  }
+  
+  .nav {
+    display: flex;  /* Ensure the nav container is a flex container */
+    align-items: center;  /* Align items vertically in the nav */
+  }
+  
+  .nav-links {
+    list-style: none;
+    display: flex;  /* Align links horizontally */
+    gap: 15px;  /* Spacing between links */
+  }
+  
+  .nav-links li {
+    display: inline-block;
+  }
+  
+  .nav-links a {
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+  }
+  
+  .nav-links a:hover {
+    color: #ddd;
+  }
+  
+  main {
+    margin-top: 60px;  /* Adjusted margin to match the header height */
+  }
+  

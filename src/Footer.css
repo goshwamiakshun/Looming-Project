@@ -1,0 +1,45 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+}
+
+.footer {
+    position: fixed;  /* Make the footer stick at the bottom */
+    bottom: 0;
+    left: 0;
+    width: 100%;  /* Cover full width */
+    display: flex;
+    justify-content: space-between;  /* Distribute space between items */
+    align-items: center;  /* Vertically align items */
+    height: 60px;  /* Height of the footer */
+    padding: 0 20px;  /* Padding for horizontal spacing */
+    background: linear-gradient(45deg, #3E5151, #DECBA4);  /* Gradient background */
+    color: white;
+    z-index: 1000;  /* Ensure footer is on top of other content */
+}
+
+.footer-content {
+    /* Ensure the content is aligned to the left */
+    display: flex;
+    align-items: center;  /* Center content vertically */
+}
+
+.footer-links {
+    display: flex;  /* Align links horizontally */
+    align-items: center;  /* Center links vertically */
+}
+
+.footer-links a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+.footer-links a:hover {
+    text-decoration: underline;
+}

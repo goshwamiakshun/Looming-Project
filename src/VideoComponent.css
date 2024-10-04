@@ -1,0 +1,92 @@
+.video-container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.custom-video {
+  max-width: 100%;
+  border: 2px solid #ccc; /* Optional border for the video */
+  border-radius: 10px; /* Rounded corners for the video */
+}
+
+.hotspots {
+  position: absolute; /* Position relative to the video */
+  top: 0; /* Align with the top of the video */
+  left: 0; /* Align with the left of the video */
+  width: 100%; /* Cover the full video width */
+  height: 100%; /* Cover the full video height */
+}
+
+.hotspot {
+  position: absolute; /* Absolute positioning for hotspots */
+  cursor: pointer;
+}
+
+/* Adjust these styles to position the hotspots over the correct objects in the video */
+.hotspot.truck {
+  bottom: 31%; /* Move the hotspot slightly higher */
+  left: 20%;   /* Keep the current left alignment */
+  width: 131px; /* Slightly decrease the size of the image */
+  height: auto; /* Maintain aspect ratio */
+}
+
+
+.hotspot.bus {
+  top: 28%; /* Adjust this value based on where the bus appears in the video */
+  left: 43%; /* Adjust this value based on the horizontal position of the bus */
+  width: 150px; /* Size of the dotted image */
+  height: auto; /* Maintain aspect ratio */
+}
+
+
+
+.hotspot.auto {
+  top: 35%; /* Adjust this value based on where the auto rickshaw appears in the video */
+  left: 31%; /* Adjust this value based on the horizontal position of the auto rickshaw */
+  width: 95px; /* Size of the dotted image */
+  height: auto; /* Maintain aspect ratio */
+}
+
+
+.play-icon-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  cursor: pointer;
+}
+
+.play-icon {
+  width: 100px; /* Size of the red circle */
+  height: 100px; /* Size of the red circle */
+  background-color: red;
+  border-radius: 50%;
+  position: relative;
+}
+
+.play-icon::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 0;
+  height: 0;
+  border-left: 25px solid white; /* Triangle size */
+  border-top: 15px solid transparent;
+  border-bottom: 15px solid transparent;
+}
+
+.play-text-button {
+  margin-top: 15px;
+  padding: 10px 30px; /* Keep the padding unchanged */
+  background-color: white;
+  border: none;
+  font-size: 24px; /* Increased font size of the text */
+  cursor: pointer;
+  font-weight: bold;
+  border-radius: 5px; /* Optional rounded corners for the button */
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1); /* Optional shadow for the button */
+}
