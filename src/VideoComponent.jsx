@@ -4,7 +4,7 @@ import './VideoComponent.css';
 const VideoComponent = () => {
   const videoRef = useRef(null);
   const [isPlaying, setIsPlaying] = useState(false);
-  const [videoSrc, setVideoSrc] = useState("src/assets/MasterVideo.mp4");
+  const [videoSrc, setVideoSrc] = useState(`${process.env.PUBLIC_URL}/MasterVideo.mp4`);
 
   const [hotspotVisible, setHotspotVisible] = useState({
     bus: false,
@@ -62,7 +62,7 @@ const VideoComponent = () => {
   };
 
   const resetToOriginalVideo = () => {
-    setVideoSrc("src/assets/MasterVideo.mp4");
+    setVideoSrc(`${process.env.PUBLIC_URL}/MasterVideo.mp4`);
     videoRef.current.load();
     videoRef.current.currentTime = 32; // Set the time to where hotspots appear
     videoRef.current.pause(); // Pause the video before playing again
@@ -71,8 +71,6 @@ const VideoComponent = () => {
     resetHotspots();
     setIsWrongChoice(false); // Reset isWrongChoice to false
   };
-
-  
 
   useEffect(() => {
     const videoElement = videoRef.current;
@@ -97,26 +95,26 @@ const VideoComponent = () => {
         <div className="hotspots">
           {hotspotVisible.bus && (
             <img
-              src="src/assets/BusDotted.png"
+              src={`${process.env.PUBLIC_URL}/BusDotted.png`} // Updated path
               alt="Bus"
               className="hotspot bus"
-              onClick={() => handleOptionClick("src/assets/BUS.mp4", false)} // Incorrect
+              onClick={() => handleOptionClick(`${process.env.PUBLIC_URL}/BUS.mp4`, false)} // Incorrect
             />
           )}
           {hotspotVisible.truck && (
             <img
-              src="src/assets/TruckDotted.png"
+              src={`${process.env.PUBLIC_URL}/TruckDotted.png`} // Updated path
               alt="Truck"
               className="hotspot truck"
-              onClick={() => handleOptionClick("src/assets/TRUCK.mp4", true)} // Correct
+              onClick={() => handleOptionClick(`${process.env.PUBLIC_URL}/TRUCK.mp4`, true)} // Correct
             />
           )}
           {hotspotVisible.auto && (
             <img
-              src="src/assets/AutoDotted.png"
+              src={`${process.env.PUBLIC_URL}/AutoDotted.png`} // Updated path
               alt="Auto"
               className="hotspot auto"
-              onClick={() => handleOptionClick("src/assets/AUTO.mp4", false)} // Incorrect
+              onClick={() => handleOptionClick(`${process.env.PUBLIC_URL}/AUTO.mp4`, false)} // Incorrect
             />
           )}
         </div>

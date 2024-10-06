@@ -1,11 +1,11 @@
 // App.js
 import React, { useEffect, useState } from 'react';
-import SplashScreen from './SplashScreen';
-import Header from './Header';
+// import SplashScreen from './SplashScreen';
+// import Header from './Header';
 import VideoComponent from './VideoComponent';
-import Footer from './Footer';
+// import Footer from './Footer';
 import './App.css'; // Import your main app CSS
-import MainContent from './MainContent';
+// import MainContent from './MainContent';
 
 const App = () => {
   const [loading, setLoading] = useState(true);
