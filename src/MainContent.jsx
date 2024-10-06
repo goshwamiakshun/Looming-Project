@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './MainContent.css';
 
-import DemoImage from './assets/DemoImage.jpg';
+import DemoImage from 'public/DemoImage.jpg';
 
 function MainContent() {
   const [currentIndex, setCurrentIndex] = useState(0);
