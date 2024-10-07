@@ -1,12 +1,17 @@
+/* General styling for the video container and centering elements */
 .video-container {
   position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
+  width: 100%; /* Full width of the parent container */
+  max-width: 1200px; /* Max width for larger screens */
+  margin: 0 auto; /* Center the container */
 }
 
 .custom-video {
-  max-width: 100%;
+  width: 100%; /* 100% width to make video responsive */
+  max-width: 100%; /* Ensure the video doesn't exceed container width */
   border: 2px solid #ccc; /* Optional border for the video */
   border-radius: 10px; /* Rounded corners for the video */
 }
@@ -22,33 +27,25 @@
 .hotspot {
   position: absolute; /* Absolute positioning for hotspots */
   cursor: pointer;
+  width: 10vw; /* Scale with viewport width for responsiveness */
+  height: auto; /* Maintain aspect ratio */
 }
 
 /* Adjust these styles to position the hotspots over the correct objects in the video */
 .hotspot.truck {
   bottom: 31%; /* Move the hotspot slightly higher */
   left: 20%;   /* Keep the current left alignment */
-  width: 131px; /* Slightly decrease the size of the image */
-  height: auto; /* Maintain aspect ratio */
 }
-
 
 .hotspot.bus {
   top: 28%; /* Adjust this value based on where the bus appears in the video */
   left: 43%; /* Adjust this value based on the horizontal position of the bus */
-  width: 150px; /* Size of the dotted image */
-  height: auto; /* Maintain aspect ratio */
 }
-
-
 
 .hotspot.auto {
   top: 35%; /* Adjust this value based on where the auto rickshaw appears in the video */
   left: 31%; /* Adjust this value based on the horizontal position of the auto rickshaw */
-  width: 95px; /* Size of the dotted image */
-  height: auto; /* Maintain aspect ratio */
 }
-
 
 .play-icon-container {
   position: absolute;
@@ -81,12 +78,82 @@
 
 .play-text-button {
   margin-top: 15px;
-  padding: 10px 30px; /* Keep the padding unchanged */
+  padding: 10px 30px;
   background-color: white;
   border: none;
-  font-size: 24px; /* Increased font size of the text */
+  font-size: 24px;
   cursor: pointer;
   font-weight: bold;
-  border-radius: 5px; /* Optional rounded corners for the button */
-  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1); /* Optional shadow for the button */
+  border-radius: 5px;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Media queries for different screen sizes */
+@media only screen and (max-width: 1200px) {
+  .custom-video {
+    width: 90vw; /* Responsive video width for medium screens */
+    height: auto;
+  }
+
+  .hotspot.truck {
+    left: 25%; /* Adjust position for smaller screens */
+  }
+
+  .hotspot.bus {
+    left: 40%; /* Adjust position for smaller screens */
+  }
+
+  .hotspot.auto {
+    left: 30%; /* Adjust position for smaller screens */
+  }
+
+  .play-icon {
+    width: 80px;
+    height: 80px;
+  }
+
+  .play-icon::before {
+    border-left: 20px solid white;
+    border-top: 12px solid transparent;
+    border-bottom: 12px solid transparent;
+  }
+
+  .play-text-button {
+    font-size: 18px;
+    padding: 8px 24px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .custom-video {
+    width: 95vw; /* Full width for mobile */
+  }
+
+  .hotspot.truck {
+    left: 22%;
+  }
+
+  .hotspot.bus {
+    left: 38%;
+  }
+
+  .hotspot.auto {
+    left: 28%;
+  }
+
+  .play-icon {
+    width: 60px;
+    height: 60px;
+  }
+
+  .play-icon::before {
+    border-left: 15px solid white;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+  }
+
+  .play-text-button {
+    font-size: 16px;
+    padding: 6px 20px;
+  }
 }
